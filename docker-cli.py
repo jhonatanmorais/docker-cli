@@ -35,7 +35,7 @@ def listar_containers(args):
         client = docker.from_env()
         get_all = client.containers.list(all)
         containers_list = []
-        print("> Docker-CLI > LISTA DE CONTAINERS:\n")
+        print("> Docker-CLI > LISTA DE CONTAINERS:\n\n")
         for cada_container in get_all:
             conectando =  client.containers.get(cada_container.id)
             print("> ID: %s | IMAGE: %s | COMMAND: %s | NAME: %s | STATUS: %s" % (conectando.short_id, conectando.attrs['Config']['Image'], conectando.attrs['Config']['Cmd'], conectando.name, conectando.status))
