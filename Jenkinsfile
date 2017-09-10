@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage('Build') {
       steps {
-        sh 'ls -l'
+        sh 'docker built -t example .'
       }
     }
     stage('Tests') {
@@ -13,7 +13,7 @@ pipeline {
     }
     stage('Approval') {
       steps {
-        input 'Você aprova para deploy?'
+        input 'VocÃª aprova para deploy?'
       }
     }
     stage('Deploy') {
